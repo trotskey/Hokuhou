@@ -1,0 +1,9 @@
+﻿1>------ Build started: Project: 08_Collisions, Configuration: Release Win32 ------
+1>  Timer.cpp
+1>..\..\..\..\common\include\IND_Entity2d.h(477): error C2143: syntax error : missing ';' before '<'
+1>..\..\..\..\common\include\IND_Entity2d.h(477): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+1>..\..\..\..\common\include\IND_Entity2d.h(477): error C2238: unexpected token(s) preceding ';'
+1>..\..\..\basic\08_Collisions\Timer.cpp(22): error C2143: syntax error : missing ')' before '}'
+1>..\..\..\basic\08_Collisions\Timer.cpp(22): error C2064: term does not evaluate to a function taking 0 arguments
+1>..\..\..\basic\08_Collisions\Timer.cpp(22): error C2143: syntax error : missing ';' before '}'
+========== Build: 0 succeeded, 1 failed, 0 up-to-date, 0 skipped ==========

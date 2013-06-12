@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Enemies">
+      <UniqueIdentifier>{2e284582-d694-413d-85b5-e4154765b894}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Bullets">
+      <UniqueIdentifier>{8cc6e763-2b85-4755-8fc2-b7e5e6d23d0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Fmod">
+      <UniqueIdentifier>{7cf99830-a33c-40d4-9fab-a03a513b321c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\basic\08_Collisions\CIndieLib_vc2008.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basic\08_Collisions\Tutorial08.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\WorkingPath.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basic\08_Collisions\Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basic\08_Collisions\Score.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basic\08_Collisions\Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basic\08_Collisions\Timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basic\08_Collisions\enemyFactory.cpp">
+      <Filter>Source Files\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basic\08_Collisions\enemyTank.cpp">
+      <Filter>Source Files\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basic\08_Collisions\Entank2.cpp">
+      <Filter>Source Files\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basic\08_Collisions\EnTank3.cpp">
+      <Filter>Source Files\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basic\08_Collisions\bullet.cpp">
+      <Filter>Source Files\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basic\08_Collisions\BulletFactory.cpp">
+      <Filter>Source Files\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basic\08_Collisions\common.cpp">
+      <Filter>Source Files\Fmod</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basic\08_Collisions\common_platform.cpp">
+      <Filter>Source Files\Fmod</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basic\08_Collisions\Stage1Boss.cpp">
+      <Filter>Source Files\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basic\08_Collisions\cluster.cpp">
+      <Filter>Source Files\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basic\08_Collisions\FontManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basic\08_Collisions\crow.cpp">
+      <Filter>Source Files\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basic\08_Collisions\SoundManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\basic\08_Collisions\CIndieLib_vc2008.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\WorkingPath.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\Player.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\Evertable.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\Score.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\Game.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\Timer.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\EnTank3.h">
+      <Filter>Source Files\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\enemyFactory.h">
+      <Filter>Source Files\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\enemyTank.h">
+      <Filter>Source Files\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\EnTank2.h">
+      <Filter>Source Files\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\BulletFactory.h">
+      <Filter>Source Files\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\bullet.h">
+      <Filter>Source Files\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\common.h">
+      <Filter>Source Files\Fmod</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\common_platform.h">
+      <Filter>Source Files\Fmod</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\fmod.h">
+      <Filter>Source Files\Fmod</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\fmod.hpp">
+      <Filter>Source Files\Fmod</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\fmod_codec.h">
+      <Filter>Source Files\Fmod</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\fmod_common.h">
+      <Filter>Source Files\Fmod</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\fmod_dsp.h">
+      <Filter>Source Files\Fmod</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\fmod_errors.h">
+      <Filter>Source Files\Fmod</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\fmod_memoryinfo.h">
+      <Filter>Source Files\Fmod</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\fmod_output.h">
+      <Filter>Source Files\Fmod</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\Stage1Boss.h">
+      <Filter>Source Files\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\cluster.h">
+      <Filter>Source Files\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\FontManager.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\crow.h">
+      <Filter>Source Files\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\SoundManager.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

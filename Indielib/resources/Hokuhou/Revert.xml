@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation>
+	<!-- frames declaration -->
+	<frames>	
+		<frame name="Evert1" file="..\..\resources\Hokuhou\Eversion\01.png" collision="..\..\resources\Hokuhou\Eversion\Eversion_collisons.xml"/>
+		<frame name="Evert2" file="..\..\resources\Hokuhou\Eversion\02.png" collision="..\..\resources\Hokuhou\Eversion\Eversion_collisons.xml"/>
+		<frame name="Evert3" file="..\..\resources\Hokuhou\Eversion\03.png" collision="..\..\resources\Hokuhou\Eversion\Eversion_collisons.xml"/>
+		<frame name="Evert4" file="..\..\resources\Hokuhou\Eversion\04.png" collision="..\..\resources\Hokuhou\Eversion\Eversion_collisons.xml"/>
+		<frame name="Evert5" file="..\..\resources\Hokuhou\Eversion\05.png" collision="..\..\resources\Hokuhou\Eversion\Eversion_collisons.xml"/>
+		<frame name="Evert6" file="..\..\resources\Hokuhou\Eversion\06.png" collision="..\..\resources\Hokuhou\Eversion\Eversion_collisons.xml"/>
+		<frame name="Evert7" file="..\..\resources\Hokuhou\Eversion\07.png" collision="..\..\resources\Hokuhou\Eversion\Eversion_collisons.xml"/>
+		<frame name="Evert8" file="..\..\resources\Hokuhou\Eversion\08.png" collision="..\..\resources\Hokuhou\Eversion\Eversion_collisons.xml"/>
+		<frame name="Evert9" file="..\..\resources\Hokuhou\Eversion\09.png" collision="..\..\resources\Hokuhou\Eversion\Eversion_collisons.xml"/>
+		<frame name="Evert10" file="..\..\resources\Hokuhou\Eversion\10.png" collision="..\..\resources\Hokuhou\Eversion\Eversion_collisons.xml"/>
+		<frame name="Evert11" file="..\..\resources\Hokuhou\Eversion\11.png" collision="..\..\resources\Hokuhou\Eversion\Eversion_collisons.xml"/>
+		<frame name="Evert12" file="..\..\resources\Hokuhou\Eversion\12.png" collision="..\..\resources\Hokuhou\Eversion\Eversion_collisons.xml"/>
+		<frame name="Evert13" file="..\..\resources\Hokuhou\Eversion\13.png" collision="..\..\resources\Hokuhou\Eversion\Eversion_collisons.xml"/>
+		<frame name="Evert14" file="..\..\resources\Hokuhou\Eversion\14.png" collision="..\..\resources\Hokuhou\Eversion\Eversion_collisons.xml"/>
+		<frame name="Evert15" file="..\..\resources\Hokuhou\Eversion\15.png" collision="..\..\resources\Hokuhou\Eversion\Eversion_collisons.xml"/>
+		<frame name="Evert16" file="..\..\resources\Hokuhou\Eversion\16.png" collision="..\..\resources\Hokuhou\Eversion\Eversion_collisons.xml"/>
+	</frames>
+ 
+	<!-- sequences declaration -->
+	<sequences>
+		<sequence name="Revert">
+			<frame name="Evert16" time="100" />
+			<frame name="Evert15" time="100" />
+			<frame name="Evert14" time="100" />
+			<frame name="Evert13" time="100" />
+			<frame name="Evert12" time="100" />
+			<frame name="Evert11" time="100" />
+			<frame name="Evert10" time="100" />
+			<frame name="Evert9" time="100" />
+			<frame name="Evert8" time="100" />
+			<frame name="Evert7" time="100" />
+			<frame name="Evert6" time="100" />
+			<frame name="Evert5" time="100" />
+			<frame name="Evert4" time="100" />
+			<frame name="Evert3" time="100" />
+			<frame name="Evert2" time="100" />
+			<frame name="Evert1" time="100" />
+		</sequence>			
+	</sequences>
+</animation>

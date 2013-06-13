@@ -89,6 +89,7 @@ Game::Game(){
 
 	//float mAngle = 0;
 	mEvert = Player::instance();
+	mTimer = Timer::instance();
 	//int mSpeedRotation = 5;
 	//float mDelta;
 	//float time = 0.0f;
@@ -145,6 +146,7 @@ bool Game::run(){
 	if(factory->Hit("Bullet",mEvert,"Evert") > 0){
 		//mTextSmallWhite->setText("You have been hit");
 		mScore->hit();
+		mTimer->failBonus();
 	}
 	mTextSmallWhite->setText(mScore->getscore());
 	mTextLives->setText(mScore->getlives());

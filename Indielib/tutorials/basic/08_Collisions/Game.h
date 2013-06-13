@@ -26,6 +26,7 @@ class Game{
 		enemyFactory *Efactory;
 		BulletFactory * factory;
 		FontManager * fonts;
+		Timer * mTimer;
 		IND_Entity2d *mTextSmallWhite;
 		IND_Entity2d *mTextLives;
 		IND_Entity2d *mTextPause;

@@ -95,6 +95,8 @@ bool enemyFactory::Build(float mDelta){
 		} else {
 			hold = false;
 		}
+	} else {
+		mTimer->decrementTime(mDelta);
 	}
 	if(time <= 0){
 		if(orders.empty()){

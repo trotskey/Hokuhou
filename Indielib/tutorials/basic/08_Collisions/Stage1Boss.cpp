@@ -119,7 +119,7 @@ bool Stage1Boss::spellN3(Evertable * ever){
 			Bob->setXY(eX,eY+20);
 			float AngleX = cosf(angle+(x*5.0f-10)/180.0f*PI);
 			float AngleY = sinf(angle+(x*5.0f-10)/180.0f*PI);
-			Bob->setSpeed(AngleX*200,AngleY*200);
+			Bob->setSpeed(AngleX*170,AngleY*170);
 			//Bob->setBounces(3);
 			if(Everted){
 				Bob->Evert();
@@ -216,11 +216,9 @@ bool Stage1Boss::nextCard(){
 		}
 	}
 	phase++;
-	if(hp < 1){
+	/*if(hp < 1){
 		mScore->addtoScore(4000);
-	}
-	mScore->addtoScore(1000);
-	factory->ClearScreen();
+	}*/
 	factory->ClearScreen();
 	if(phase < numphases){
 		Bullet * bonus = factory->createBullet("bonus",false);
@@ -248,8 +246,10 @@ bool Stage1Boss::nextCard(){
 bool Stage1Boss::hit(int hits){
 	bool ret = false;
 	hp -= hits;
-	mTimer->setInitHP(hp);
-	if(hp < 1){
+	mScore->addtoScore(hits*10);
+	//mTimer->setInitHP(hp);
+	
+	if(!mTimer->hit(hits)){
 		ret = nextCard();
 	}
 	return ret;

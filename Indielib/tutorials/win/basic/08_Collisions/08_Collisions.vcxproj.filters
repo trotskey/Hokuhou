@@ -11,18 +11,21 @@
     <Filter Include="Source Files\Bullets">
       <UniqueIdentifier>{8cc6e763-2b85-4755-8fc2-b7e5e6d23d0b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Fmod">
+    <Filter Include="Source Files\Enemies\Spell Cards">
+      <UniqueIdentifier>{b6865e5c-d0eb-4f04-930e-ca7cd8132b54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\IndieLib">
+      <UniqueIdentifier>{94ac81e0-8b2c-42a2-9952-c9e73429bf29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Sound">
+      <UniqueIdentifier>{c803f1e1-178b-4d35-aa29-8d3eccfe476a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Sound\Fmod">
       <UniqueIdentifier>{7cf99830-a33c-40d4-9fab-a03a513b321c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\basic\08_Collisions\CIndieLib_vc2008.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\basic\08_Collisions\Tutorial08.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\WorkingPath.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\basic\08_Collisions\Player.cpp">
@@ -56,15 +59,12 @@
       <Filter>Source Files\Bullets</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\basic\08_Collisions\common.cpp">
-      <Filter>Source Files\Fmod</Filter>
+      <Filter>Source Files\Sound\Fmod</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\basic\08_Collisions\common_platform.cpp">
-      <Filter>Source Files\Fmod</Filter>
+      <Filter>Source Files\Sound\Fmod</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\basic\08_Collisions\Stage1Boss.cpp">
-      <Filter>Source Files\Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\basic\08_Collisions\cluster.cpp">
       <Filter>Source Files\Enemies</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\basic\08_Collisions\FontManager.cpp">
@@ -73,17 +73,35 @@
     <ClCompile Include="..\..\..\basic\08_Collisions\crow.cpp">
       <Filter>Source Files\Enemies</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\basic\08_Collisions\cluster.cpp">
+      <Filter>Source Files\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basic\08_Collisions\claw.cpp">
+      <Filter>Source Files\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basic\08_Collisions\spell_101.cpp">
+      <Filter>Source Files\Enemies\Spell Cards</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basic\08_Collisions\spell_102.cpp">
+      <Filter>Source Files\Enemies\Spell Cards</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basic\08_Collisions\spell_103.cpp">
+      <Filter>Source Files\Enemies\Spell Cards</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basic\08_Collisions\CIndieLib_vc2008.cpp">
+      <Filter>Source Files\IndieLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\WorkingPath.cpp">
+      <Filter>Source Files\IndieLib</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\..\basic\08_Collisions\SoundManager.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basic\08_Collisions\spell_104.cpp">
+      <Filter>Source Files\Enemies\Spell Cards</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\basic\08_Collisions\CIndieLib_vc2008.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\WorkingPath.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\basic\08_Collisions\Player.h">
       <Filter>Source Files</Filter>
     </ClInclude>
@@ -118,39 +136,36 @@
       <Filter>Source Files\Bullets</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\basic\08_Collisions\common.h">
-      <Filter>Source Files\Fmod</Filter>
+      <Filter>Source Files\Sound\Fmod</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\basic\08_Collisions\common_platform.h">
-      <Filter>Source Files\Fmod</Filter>
+      <Filter>Source Files\Sound\Fmod</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\basic\08_Collisions\fmod.h">
-      <Filter>Source Files\Fmod</Filter>
+      <Filter>Source Files\Sound\Fmod</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\basic\08_Collisions\fmod.hpp">
-      <Filter>Source Files\Fmod</Filter>
+      <Filter>Source Files\Sound\Fmod</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\basic\08_Collisions\fmod_codec.h">
-      <Filter>Source Files\Fmod</Filter>
+      <Filter>Source Files\Sound\Fmod</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\basic\08_Collisions\fmod_common.h">
-      <Filter>Source Files\Fmod</Filter>
+      <Filter>Source Files\Sound\Fmod</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\basic\08_Collisions\fmod_dsp.h">
-      <Filter>Source Files\Fmod</Filter>
+      <Filter>Source Files\Sound\Fmod</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\basic\08_Collisions\fmod_errors.h">
-      <Filter>Source Files\Fmod</Filter>
+      <Filter>Source Files\Sound\Fmod</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\basic\08_Collisions\fmod_memoryinfo.h">
-      <Filter>Source Files\Fmod</Filter>
+      <Filter>Source Files\Sound\Fmod</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\basic\08_Collisions\fmod_output.h">
-      <Filter>Source Files\Fmod</Filter>
+      <Filter>Source Files\Sound\Fmod</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\basic\08_Collisions\Stage1Boss.h">
-      <Filter>Source Files\Enemies</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\basic\08_Collisions\cluster.h">
       <Filter>Source Files\Enemies</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\basic\08_Collisions\FontManager.h">
@@ -159,8 +174,32 @@
     <ClInclude Include="..\..\..\basic\08_Collisions\crow.h">
       <Filter>Source Files\Enemies</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\cluster.h">
+      <Filter>Source Files\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\claw.h">
+      <Filter>Source Files\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\spellcard.h">
+      <Filter>Source Files\Enemies\Spell Cards</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\spell_102.h">
+      <Filter>Source Files\Enemies\Spell Cards</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\spell_103.h">
+      <Filter>Source Files\Enemies\Spell Cards</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\CIndieLib_vc2008.h">
+      <Filter>Source Files\IndieLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\WorkingPath.h">
+      <Filter>Source Files\IndieLib</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\..\basic\08_Collisions\SoundManager.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\spell_104.h">
+      <Filter>Source Files\Enemies\Spell Cards</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

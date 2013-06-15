@@ -118,6 +118,7 @@
     <ClCompile Include="..\..\..\basic\08_Collisions\bullet.cpp" />
     <ClCompile Include="..\..\..\basic\08_Collisions\BulletFactory.cpp" />
     <ClCompile Include="..\..\..\basic\08_Collisions\CIndieLib_vc2008.cpp" />
+    <ClCompile Include="..\..\..\basic\08_Collisions\claw.cpp" />
     <ClCompile Include="..\..\..\basic\08_Collisions\cluster.cpp" />
     <ClCompile Include="..\..\..\basic\08_Collisions\common.cpp" />
     <ClCompile Include="..\..\..\basic\08_Collisions\common_platform.cpp" />
@@ -131,6 +132,10 @@
     <ClCompile Include="..\..\..\basic\08_Collisions\Player.cpp" />
     <ClCompile Include="..\..\..\basic\08_Collisions\Score.cpp" />
     <ClCompile Include="..\..\..\basic\08_Collisions\SoundManager.cpp" />
+    <ClCompile Include="..\..\..\basic\08_Collisions\spell_101.cpp" />
+    <ClCompile Include="..\..\..\basic\08_Collisions\spell_102.cpp" />
+    <ClCompile Include="..\..\..\basic\08_Collisions\spell_103.cpp" />
+    <ClCompile Include="..\..\..\basic\08_Collisions\spell_104.cpp" />
     <ClCompile Include="..\..\..\basic\08_Collisions\Stage1Boss.cpp" />
     <ClCompile Include="..\..\..\basic\08_Collisions\Timer.cpp" />
     <ClCompile Include="..\..\..\basic\08_Collisions\Tutorial08.cpp" />
@@ -140,6 +145,7 @@
     <ClInclude Include="..\..\..\basic\08_Collisions\bullet.h" />
     <ClInclude Include="..\..\..\basic\08_Collisions\BulletFactory.h" />
     <ClInclude Include="..\..\..\basic\08_Collisions\CIndieLib_vc2008.h" />
+    <ClInclude Include="..\..\..\basic\08_Collisions\claw.h" />
     <ClInclude Include="..\..\..\basic\08_Collisions\cluster.h" />
     <ClInclude Include="..\..\..\basic\08_Collisions\common.h" />
     <ClInclude Include="..\..\..\basic\08_Collisions\common_platform.h" />
@@ -162,6 +168,10 @@
     <ClInclude Include="..\..\..\basic\08_Collisions\Player.h" />
     <ClInclude Include="..\..\..\basic\08_Collisions\Score.h" />
     <ClInclude Include="..\..\..\basic\08_Collisions\SoundManager.h" />
+    <ClInclude Include="..\..\..\basic\08_Collisions\spellcard.h" />
+    <ClInclude Include="..\..\..\basic\08_Collisions\spell_102.h" />
+    <ClInclude Include="..\..\..\basic\08_Collisions\spell_103.h" />
+    <ClInclude Include="..\..\..\basic\08_Collisions\spell_104.h" />
     <ClInclude Include="..\..\..\basic\08_Collisions\Stage1Boss.h" />
     <ClInclude Include="..\..\..\basic\08_Collisions\Timer.h" />
     <ClInclude Include="..\..\..\WorkingPath.h" />

@@ -19,6 +19,7 @@ class FontManager{
 		CIndieLib *mI;
 		IND_Font * mFontSmall;
 		IND_Surface  * crow;
+		IND_Surface  * claw;
 		IND_Surface  * tank;
 		static FontManager *_pinstance;
 };

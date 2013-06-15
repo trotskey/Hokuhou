@@ -6,6 +6,12 @@
 #include "Timer.h"
 #include "cluster.h"
 #include "crow.h"
+#include "claw.h"
+
+#include "spellcard.h"
+#include "spell_102.h"
+#include "spell_103.h"
+#include "spell_104.h"
 
 class Stage1Boss: 
 	public EnTank{
@@ -21,31 +27,16 @@ class Stage1Boss:
 		bool hit(int hits);
 		bool move(float mDelta,Evertable * e);
     protected:
-		bool fire(Evertable * e);
 		bool nextCard();
-		bool spellN1(Evertable * e);
-		bool spellN2(Evertable * e);
-		bool spellN3(Evertable * e);
-		cluster * c;
-		cluster * d;
-		//cluster * e;
-		queue<Crow *> crows;
-		queue<cluster *> strings;
-		//Crow * Azuma;
-		bool bulletsSet;
-		queue<Bullet*> q; 
+
 		Timer * mTimer;
 		int phase;
-		int numphases;
-		int firecount;
-		bool slideflip;
 		float moveTime;
-		int bCount;
-		float scissorTime;
-		float lastcrow;
-		float fullAnglesX[60];
-		float fullAnglesY[60];
+
 		float tX;
 		float tY;
+
+		queue <spellcard *> spells;
+		spellcard * test;
 };
 #endif

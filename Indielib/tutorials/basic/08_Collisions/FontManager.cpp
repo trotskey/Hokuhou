@@ -29,6 +29,9 @@ IND_Surface  * FontManager::getSurface(const char * type){
 	if(type == "tank"){
 		return tank;
 	}
+	if(type == "claw"){
+		return claw;
+	}
 }
 
 FontManager::FontManager(){
@@ -37,6 +40,8 @@ FontManager::FontManager(){
 	mI->_fontManager->add(mFontSmall, "../../resources/font_small.png", "../../resources/font_small.xml", IND_ALPHA, IND_32);
 	crow = IND_Surface::newSurface(); 
 	mI->_surfaceManager->add(crow, "../../resources/Hokuhou/crow.png", IND_ALPHA, IND_32,0,255,0);
+	claw = IND_Surface::newSurface(); 
+	mI->_surfaceManager->add(claw, "../../resources/Hokuhou/spike2.png", IND_ALPHA, IND_32,0,255,0);
 	tank = IND_Surface::newSurface(); 
 	mI->_surfaceManager->add(tank, "../../resources/Hokuhou/EnemyTankDown.png", IND_ALPHA, IND_32);
 }

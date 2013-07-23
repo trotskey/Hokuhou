@@ -24,6 +24,7 @@ EnTank::EnTank(bool evert){
 	Everted = evert;
 	lastfire = 0.0f;
 	mScore = Score::instance();
+	stop = true;
 }
 
 EnTank::EnTank(IND_Entity2d * e,bool evert){
@@ -44,6 +45,7 @@ EnTank::EnTank(IND_Entity2d * e,bool evert){
 	Everted = evert;
 	lastfire = 0.0f;
 	mScore = Score::instance();
+	stop = true;
 }
 
 IND_Entity2d * EnTank::getEntity(){
@@ -86,8 +88,13 @@ bool EnTank::hit(int hits){
 	return ret;
 }
 
+bool EnTank::setElement(TiXmlElement * start){
+	xElement = start;
+	return true;
+}
+
 bool EnTank::move(float mDelta, Evertable * e){
-	time += mDelta;
+	/*time += mDelta;
 	if(time > 1 && time < 1.5){
 		if(time > 1.25){
 			if(time - lastfire > 1){
@@ -101,18 +108,34 @@ bool EnTank::move(float mDelta, Evertable * e){
 	} else {
 		time = 0;
 		lastfire = 0;
-	}/*else if(time > 2 && time < 3){
-		eX += mDelta*vX;
-		eY += mDelta*vY;
-	} else if(time > 3.25 && time < 3.5){
-		if(time - lastfire > 2){
-			fire(e);
-			lastfire = time;
-		}
-	} else if(time > 4) {
-		eX += mDelta*vX;
-		eY += mDelta*vY;
 	}*/
+	time -= mDelta;
+	if(!stop){
+		eX += mDelta*vX;
+		eY += mDelta*vY;
+	}
+	if(time < 0){
+		string elemName = xElement->Value();
+		if(elemName.compare("wait")==0){
+			float addTime = atof(xElement->Attribute("time"));
+			time += addTime;
+			stop = true;
+		} else if(elemName.compare("move")==0){
+			float addTime = atof(xElement->Attribute("time"));
+			time += addTime;
+			stop = false;
+		} else if(elemName.compare("fire")==0){
+			fire(e);
+		} else if(elemName.compare("speed")==0){
+			float newvX = atof(xElement->Attribute("vX"));
+			float newvY = atof(xElement->Attribute("vY"));
+			setSpeed(newvX,newvY);
+		}
+		TiXmlElement * tElement = xElement->NextSiblingElement();
+		if(tElement){
+			xElement = tElement;
+		}
+	}
 	Entity->setPosition(eX, eY, 1);
 	return true;
 }
@@ -132,16 +155,17 @@ bool EnTank::Evert(){
 }
 
 bool EnTank::fire(Evertable * e){
-	for(int x=0; x<3; x++){
+	//for(int x=0; x<3; x++){
+	int x = rand()%3;
 		Bullet * Bob = factory->createBullet(false);
 		Bob->setXY(eX,eY+20);
 		if(x==0){
-			Bob->setSpeed(25.9*1,96.6*1);
+			Bob->setSpeed(25.9*0.75,96.6*0.75);
 		} else if(x==1){
-			Bob->setSpeed(0,100*1);
+			Bob->setSpeed(0,100*0.75);
 			//Bob->Evert();
 		} else if(x==2){
-			Bob->setSpeed(-25.9*1,96.6*1);
+			Bob->setSpeed(-25.9*0.75,96.6*0.75);
 		}
 		/*Bob->getEntity()->setHotSpot(0.5,-2.0f);
 		if(x==0){
@@ -155,6 +179,6 @@ bool EnTank::fire(Evertable * e){
 		if(Everted){
 			Bob->Evert();
 		}
-	}
+	//}
 	return true;
 }

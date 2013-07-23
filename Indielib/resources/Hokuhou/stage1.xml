@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<root>
+	<player file="../../resources/Hokuhou/Portal/chell.png"/>
+	<enemy file="../../resources/Hokuhou/Portal/wolf.png"/>
+	<presetBM file="../../resources/Hokuhou/Forest.mp3" num="0"/>
+	<presetBM file="../../resources/Hokuhou/Fenrir_Cometh.mp3" num="1"/>
+	<banner file="../../resources/Hokuhou/stage1.png" r="0" g="255" b="0" />
+	<hidedialog/>
+	<changeBM num="0"/>
+	<wait time="4"/>
+	<tank posX="0" posY="70" vX="100.0" vY="25.0">
+		<move time="1"/>
+		<fire />
+		<move time="0.5"/>
+		<fire />
+		<move time="3"/>
+	</tank>
+	<wait time="0.2"/>
+	<tank posX="500" posY="70" vX="-50.0" vY="25.0">
+		<move time="1"/>
+		<fire />
+		<move time="0.5"/>
+		<fire />
+		<move time="3"/>
+		<speed vX="25.0" vY="50.0"/>
+		<move time="3"/>
+		<fire />
+		<move time="1"/>
+	</tank>
+	<wait time="10"/>
+	<showbanner/>
+	<wait time="4"/>
+	<hidebanner/>
+	<wait time="4"/>
+	<line wait="4" x="20" side="left" text="PG:  Woah, hang on...  Is this still Iceland? _ Doesn't look like it."/>
+	<line wait="4" x="20" side="right" text="PG:  Which means...  Success! _ I finally breached the wall between planes!"/>
+	<line wait="4" x="20" side="left" text="PG:  I sure hope the anomaly didn't mess up my portholes. _ I just recalibrated them, too!"/>
+	<line wait="4" x="20" side="right" text="PG:  In any case, I'd better start taking notes! _ This is an expedition, after all!"/>
+	<hidedialog/>
+	<changeBM num="1"/>
+	<boss1 posX="250" posY="0" vX="0.0" vY="50.0"/>
+	<untilclear time="180"/>
+	<line wait="4" x="20" side="left" text="PG:  What's going on here?"/>
+	<line wait="4" x="20" side="right" text="Fen:  Well, I'm not going to tell you _ It's not like I know either"/>
+	<line wait="4" x="20" side="left" text="PG:  Yeah, I suppose"/>
+	<hidedialog/>
+	<changeBM num="0"/>
+</root>

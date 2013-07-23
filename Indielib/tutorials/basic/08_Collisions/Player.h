@@ -9,7 +9,8 @@
 #include "IND_Entity2d.h"
 #include "IND_Animation.h"
 #include "IND_Surface.h"
-#include "enemyFactory.h"
+//#include "enemyFactory.h"
+#include "BulletFactory.h"
 #include "Evertable.h"
 
 #define FORTYFIVE 0.707
@@ -21,6 +22,7 @@ class Player:
 		IND_Entity2d * getEntity();
 		bool Evert();
 		bool isEverted();
+		bool toggleBullets();
 		//bool setXY(float x, float y);
 		bool move(float mDelta);
     private:
@@ -28,6 +30,7 @@ class Player:
 		CIndieLib *mI;
 		int Changing;
 		int eDir;
+		bool bulletsOn;
 		IND_Entity2d *mTimer;
 		IND_Entity2d *mHitbox;
 		IND_Surface *mSurfaceIdle;
@@ -40,7 +43,7 @@ class Player:
 		IND_Surface *mSurfaceHitbox;
 		IND_Animation *mReversionAnimation;
 		IND_Animation *mEversionAnimation;
-		enemyFactory  * Efactory;
+	//	enemyFactory  *Efactory;
 		BulletFactory * factory;
 		float eMaxX;
 		float eMaxY;

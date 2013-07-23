@@ -8,12 +8,15 @@
 #include "enemyTank.h"
 #include "enTank2.h"
 #include "EnTank3.h"
+#include "Player.h"
 #include "Stage1Boss.h"
 #include "crow.h"
 #include "IND_Font.h"
 #include "Timer.h"
 #include <queue>
 #include "SoundManager.h"
+#include "tinyxml.h"
+#include "fontmanager.h"
 
 class enemyFactory {
 	public: 
@@ -22,6 +25,7 @@ class enemyFactory {
 		bool Build(float mDelta);
 		bool Evert();
 		bool Hit();
+		bool NextStage();
 		//int Hit(const char * type, IND_Entity2d * ent, const char * str);
 		EnTank * createTank(bool Evert);
 		EnTank * createTank2(bool Evert);
@@ -30,6 +34,7 @@ class enemyFactory {
 		//Crow   * createCrow(bool Evert);
 		//Bullet * createBullet(const char * type, bool Evert);
     private:
+		FontManager * FontsNSurfs;
 		enemyFactory();
 		bool disappear(EnTank * Winston);
 		bool hold;
@@ -42,12 +47,21 @@ class enemyFactory {
 		CIndieLib *mI;
 		SoundManager * mSm;
 		Timer * mTimer;
+		Player * dPlayer;
 		BulletFactory * bFactory;
+		IND_Entity2d *TextBG;
 		IND_Entity2d *mBanner;
 		IND_Entity2d *mTextbox;
 		IND_Entity2d *mText;
+		IND_Entity2d *mPlayer;
+		IND_Entity2d *mEnemy;
 		IND_Font * mFont;
 		IND_Surface *mSurfaceBanner;
+		IND_Surface *mSurfaceWhite;
+		IND_Surface *mSurfacePlayer;
+		IND_Surface *mSurfaceEnemy;
+		TiXmlDocument *mXML;
+		TiXmlElement *xElement;
 		static enemyFactory *_pinstance;
 };
 #endif

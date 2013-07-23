@@ -34,7 +34,7 @@ Game::Game(){
 	mHUD->setSurface(mSurfaceHUD);					// Set the surface into the entity
 	mHUD->setHotSpot(0.5f,0.5f);
 	mHUD->setScale(1.01f,1.01f);
-	mHUD->setPosition(400,300,3);
+	mHUD->setPosition(400,300,16);
 
 	// Creating 2d entity for the Clear Message
 	mClear = IND_Entity2d::newEntity2d();					
@@ -66,13 +66,13 @@ Game::Game(){
 	// small white text
 	mTextSmallWhite = fonts->createText("small");
 	mTextSmallWhite->setScale(1.7,2);
-	mTextSmallWhite->setPosition(520, 200, 10);
+	mTextSmallWhite->setPosition(520, 200, 18);
 	mTextSmallWhite->setAlign(IND_LEFT);
 
 	// lives text
 	mTextLives      = fonts->createText("small");
 	mTextLives->setScale(1.7,2);
-	mTextLives->setPosition(520, 240, 10);
+	mTextLives->setPosition(520, 240, 18);
 	mTextLives->setAlign(IND_LEFT);
 
 	Efactory = enemyFactory::instance();

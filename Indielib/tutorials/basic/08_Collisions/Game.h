@@ -6,6 +6,7 @@
 #define _game_h
 
 #include "Player.h" 
+#include "EnemyFactory.h"
 #include "FontManager.h"
 #include "IND_Font.h"
 class Game{

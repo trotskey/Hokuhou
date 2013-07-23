@@ -15,7 +15,7 @@ Player *Player::instance() {
 
 Player::Player(){
 	mI       = CIndieLib::instance();
-	Efactory = enemyFactory::instance();
+	//Efactory = enemyFactory::instance();
 	factory  = BulletFactory::instance();
 
 	// Loading Evert
@@ -93,6 +93,7 @@ Player::Player(){
 	mHitbox->setPosition(eX, eY, 2);
 
 	Everted = false;
+	bulletsOn = true;
 }
 IND_Entity2d * Player::getEntity(){
 	return Entity;
@@ -195,7 +196,7 @@ bool Player::move(float mDelta){
 			Everted = 1;
 		}
 		factory->Evert();
-		Efactory->Evert();
+		//Efactory->Evert();
 		mAniTime = 1600.0f;
 		mCooldown = 10;
 		mTimer->setScale(60.0f*mCooldown/10.0f,5);
@@ -203,7 +204,7 @@ bool Player::move(float mDelta){
 		Entity->setHotSpot(0.5f, 0.58f);
 		Entity->setNumReplays(0);
 	}
-	if (mI->_input->isKeyPressed(IND_Z)){
+	if (mI->_input->isKeyPressed(IND_Z) && bulletsOn){
 		firingtime += mDelta;
 		bool bEverted = false;
 		if (mI->_input->isKeyPressed(IND_LSHIFT)){
@@ -232,6 +233,11 @@ bool Player::move(float mDelta){
 	Entity->setPosition(eX, eY, 1);
 	mHitbox->setPosition(eX, eY, 2);
 	return true;
+}
+
+bool Player::toggleBullets(){
+	bulletsOn = !bulletsOn;
+	return bulletsOn;
 }
 
 bool Player::Evert(){

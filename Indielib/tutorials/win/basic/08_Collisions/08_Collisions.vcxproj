@@ -138,6 +138,10 @@
     <ClCompile Include="..\..\..\basic\08_Collisions\spell_104.cpp" />
     <ClCompile Include="..\..\..\basic\08_Collisions\Stage1Boss.cpp" />
     <ClCompile Include="..\..\..\basic\08_Collisions\Timer.cpp" />
+    <ClCompile Include="..\..\..\basic\08_Collisions\tinystr.cpp" />
+    <ClCompile Include="..\..\..\basic\08_Collisions\tinyxml.cpp" />
+    <ClCompile Include="..\..\..\basic\08_Collisions\tinyxmlerror.cpp" />
+    <ClCompile Include="..\..\..\basic\08_Collisions\tinyxmlparser.cpp" />
     <ClCompile Include="..\..\..\basic\08_Collisions\Tutorial08.cpp" />
     <ClCompile Include="..\..\..\WorkingPath.cpp" />
   </ItemGroup>
@@ -174,6 +178,8 @@
     <ClInclude Include="..\..\..\basic\08_Collisions\spell_104.h" />
     <ClInclude Include="..\..\..\basic\08_Collisions\Stage1Boss.h" />
     <ClInclude Include="..\..\..\basic\08_Collisions\Timer.h" />
+    <ClInclude Include="..\..\..\basic\08_Collisions\tinystr.h" />
+    <ClInclude Include="..\..\..\basic\08_Collisions\tinyxml.h" />
     <ClInclude Include="..\..\..\WorkingPath.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

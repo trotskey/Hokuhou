@@ -12,6 +12,7 @@
 #include "Evertable.h"
 #include "Score.h"
 #include "FontManager.h"
+#include "tinyxml.h"
 #define PI 3.14159
 
 class EnTank: 
@@ -25,14 +26,17 @@ class EnTank:
 		bool inRange();
 		bool Evert();
 		bool isEverted();
+		bool setElement(TiXmlElement * start);
 		virtual bool hit(int hits);
 		virtual bool move(float mDelta, Evertable * e);
     protected:
 		int hp;
 		virtual bool fire(Evertable * e);
+		bool stop;
 		IND_Surface * Surface;
 		BulletFactory * factory;
 		FontManager * FontsNSurfs;
+		TiXmlElement * xElement;
 		Score * mScore;
 		float time;
 		float lastfire;

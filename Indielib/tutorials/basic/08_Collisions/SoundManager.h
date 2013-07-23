@@ -11,13 +11,13 @@ class SoundManager{
 	public:  
 		static SoundManager * instance();
 		int shutdown();
-		bool changeBM(const char * file);
+		bool changeBM(int bmnum);
+		bool presetBM(int bmnum, const char * file);
     protected:
 		SoundManager();
 		static SoundManager * _pinstance;
 		FMOD::System     *system;
-		FMOD::Sound      *sound;
-		FMOD::Sound      *sound2;
+		FMOD::Sound      *sound[5];
 		FMOD::Channel    *channel;
 		FMOD::Channel    *channel2;
 		FMOD_RESULT       result;

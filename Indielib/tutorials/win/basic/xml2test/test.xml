@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<root>
+	<buffer/>
+	<banner file="../../resources/Hokuhou/stage1.png" r="0" g="255" b="0" />
+	<line wait="4" x="20" side="left" text="PG:  Woah, hang on...  Is this still Iceland? _ Doesn't look like it."/>
+	<line wait="4" x="20" side="right" text="PG:  Which means...  Success! _ I finally breached the wall between planes!"/>
+	<line wait="4" x="20" side="left" text="PG:  I sure hope the anomaly didn't mess up my portholes. _ I just recalibrated them, too!"/>
+	<line wait="4" x="20" side="right" text="PG:  In any case, I'd better start taking notes! _ This is an expedition, after all!"/>
+</root>

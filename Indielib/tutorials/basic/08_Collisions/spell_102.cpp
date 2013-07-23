@@ -22,7 +22,7 @@ bool spell102::move(float mDelta, Evertable * e){
 				Claw * paw = new Claw(false);
 				paw->getEntity()->setAngleXYZ(0,0,45);
 				paw->setSpeed(-353.55,353.55);
-				paw->setXY(400+21*x,300+21*x);
+				paw->setXY(400+42*x,300+42*x);
 				paw->setMaxTime(0.6);
 				claws.push(paw);
 			}
@@ -31,7 +31,7 @@ bool spell102::move(float mDelta, Evertable * e){
 				Claw * paw = new Claw(false);
 				paw->getEntity()->setAngleXYZ(0,0,-90);
 				paw->setSpeed(500,0);
-				paw->setXY(50,20+30*x);
+				paw->setXY(50,20+60*x);
 				paw->setMaxTime(0.6);
 				claws.push(paw);
 			}
@@ -40,7 +40,7 @@ bool spell102::move(float mDelta, Evertable * e){
 				Claw * paw = new Claw(false);
 				paw->getEntity()->setAngleXYZ(0,0,180);
 				paw->setSpeed(0,-500);
-				paw->setXY(30+30*x,570);
+				paw->setXY(30+60*x,570);
 				paw->setMaxTime(0.6);
 				claws.push(paw);
 			}
@@ -48,7 +48,7 @@ bool spell102::move(float mDelta, Evertable * e){
 			for(int x=0; x<4; x++){
 				Claw * paw = new Claw(false);
 				paw->setSpeed(0,500);
-				paw->setXY(320+30*x,100);
+				paw->setXY(320+60*x,100);
 				paw->setMaxTime(0.6);
 				claws.push(paw);
 			}
@@ -56,7 +56,7 @@ bool spell102::move(float mDelta, Evertable * e){
 			for(int x=0; x<4; x++){
 				Claw * paw = new Claw(false);
 				paw->setSpeed(0,500);
-				paw->setXY(170+30*x,100);
+				paw->setXY(170+60*x,100);
 				paw->setMaxTime(0.6);
 				claws.push(paw);
 			}

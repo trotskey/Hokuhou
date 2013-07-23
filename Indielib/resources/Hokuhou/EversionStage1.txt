@@ -1,16 +1,17 @@
 setbanner "../../resources/Hokuhou/stage1.png" 0 255 0
-#dialog 300
-#Now what's all this then?
-#storyhold 4
-#dialog 100
-#I've come to put a stop to you, /bite me/
-#storyhold 4
-#dialog 300
-#Bite you?! I'll not stand for this!
-#storyhold 4
-#dialog 100
-#/You won't have to, I'll be relieving your legs of your body shortly/
-#storyhold 4
+dialog 20 left
+PG:  Woah, hang on...  Is this still Iceland? _ Doesn't look like it.
+storyhold 4
+dialog 20 right
+PG:  Which means...  Success! _ I finally breached the wall between planes!
+storyhold 4
+dialog 20 left
+PG:  I sure hope the anomaly didn't mess up my portholes. _ I just recalibrated them, too!
+storyhold 4
+dialog 20 right
+PG:  In any case, I'd better start taking notes! _ This is an expedition, after all!
+storyhold 4
+hidedialog
 #dialog 300
 #Heh, I always preferred the straight-forward ones. ADVANCE!!
 #storyhold 4
@@ -18,16 +19,25 @@ setbanner "../../resources/Hokuhou/stage1.png" 0 255 0
 boss1 false 250 0 0.0 50.0
 untilclear 100
 wait 4
-tank false 0 70 50.0 25.0
-tank true 500 70 -50.0 25.0
+tank false 0 70 100.0 25.0
+tank false 500 70 -50.0 25.0
 wait 0.25
-tank2 true 0 100 20 20
+tank2 false 0 100 20 20
+tank false 500 70 -100.0 25.0
 wait 0.25
 tank2 false 500 0 -45 50
 wait 10
 showbanner
 wait 10
-tank false 0 20 50.0 25.0
+tank false 0 20 80.0 25.0
+wait 0.3
+tank false 20 20 80.0 25.0
+wait 0.3
+tank false 40 20 80.0 25.0
+wait 0.3
+tank false 60 20 80.0 25.0
+wait 0.3
+tank false 80 20 80.0 25.0
 wait 1
 tank true  0 50 50.0 25.0
 wait 1

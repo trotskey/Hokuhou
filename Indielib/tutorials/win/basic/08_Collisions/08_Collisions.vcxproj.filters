@@ -23,6 +23,9 @@
     <Filter Include="Source Files\Sound\Fmod">
       <UniqueIdentifier>{7cf99830-a33c-40d4-9fab-a03a513b321c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\tinyXml">
+      <UniqueIdentifier>{ffa45288-c285-43a2-ab4a-1619ed4a0a4d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\basic\08_Collisions\Tutorial08.cpp">
@@ -99,6 +102,18 @@
     </ClCompile>
     <ClCompile Include="..\..\..\basic\08_Collisions\spell_104.cpp">
       <Filter>Source Files\Enemies\Spell Cards</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basic\08_Collisions\tinystr.cpp">
+      <Filter>Source Files\tinyXml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basic\08_Collisions\tinyxml.cpp">
+      <Filter>Source Files\tinyXml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basic\08_Collisions\tinyxmlerror.cpp">
+      <Filter>Source Files\tinyXml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basic\08_Collisions\tinyxmlparser.cpp">
+      <Filter>Source Files\tinyXml</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -200,6 +215,12 @@
     </ClInclude>
     <ClInclude Include="..\..\..\basic\08_Collisions\spell_104.h">
       <Filter>Source Files\Enemies\Spell Cards</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\tinystr.h">
+      <Filter>Source Files\tinyXml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basic\08_Collisions\tinyxml.h">
+      <Filter>Source Files\tinyXml</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

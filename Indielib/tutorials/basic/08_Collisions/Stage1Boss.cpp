@@ -31,9 +31,11 @@ Stage1Boss::Stage1Boss(IND_Entity2d * e ,bool evert):EnTank(e,evert){
 		spells.push(t);
 		spellcard * s = new spell102(&time,this);
 		spells.push(s);
+		spellcard * r = new spell103(&time,this);
+		spells.push(r);
 	}
 
-	test = new spell103(&time,this);
+	test = new spell104(&time,this);
 	test->init();
 }
 
@@ -78,6 +80,9 @@ bool Stage1Boss::nextCard(){
 }
 
 bool Stage1Boss::hit(int hits){
+	if(time < 2.0){
+		return false;
+	}
 	bool ret = false;
 	hp -= hits;
 	mScore->addtoScore(hits*10);

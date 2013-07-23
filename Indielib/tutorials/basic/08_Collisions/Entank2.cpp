@@ -55,20 +55,24 @@ bool EnTank2::hit(int hits){
 }
 
 bool EnTank2::move(float mDelta, Evertable * e){
-	time += mDelta;
-	if(time > 2 && time < 3){
+	/*time += mDelta;
+	if(time > 2 && time < 2.75){
 		if(time > 2.25){
 			//if(time - lastfire > 2){
 			//if(time - lastfire > 0.2){
-			if(time - lastfire > 0.05){
+			if(time - lastfire > 0.30){
 				if(time - lastfire > 1){
 					tX = e->getEntity()->getPosX();
 					tY = e->getEntity()->getPosY();
 				}
-				if(time < 2.75){
+				if(time < 2.5){
 					fire(e);
+					bCount+=3;
+					fire(e);
+					bCount = 3;
 				} else {
-					fire2(e);
+					fire(e);
+					bCount = 0;
 				}
 				lastfire = time;
 			}
@@ -80,15 +84,18 @@ bool EnTank2::move(float mDelta, Evertable * e){
 	} else if(time > 6 && time < 7){
 		eX += mDelta*vX;
 		eY += mDelta*vY;
-	} else if(time > 7.25 && time < 8){
+	} else if(time > 7.25 && time < 7.75){
 		//if(time - lastfire > 0.2){
-		if(time - lastfire > 0.05){
+		if(time - lastfire > 0.30){
 			if(time - lastfire > 1){
 				tX = e->getEntity()->getPosX();
 				tY = e->getEntity()->getPosY();
 			}
-			if(time < 7.75){
-				fire2(e);
+			if(time < 7.5){
+				fire(e);
+				bCount+=3;
+				fire(e);
+				bCount = 3;
 			} else {
 				fire(e);
 			}
@@ -97,6 +104,33 @@ bool EnTank2::move(float mDelta, Evertable * e){
 	} else if(time > 10) {
 		eX += mDelta*vX;
 		eY += mDelta*vY;
+	}*/
+	time -= mDelta;
+	if(!stop){
+		eX += mDelta*vX;
+		eY += mDelta*vY;
+	}
+	if(time < 0){
+		string elemName = xElement->Value();
+		if(elemName.compare("wait")==0){
+			float addTime = atof(xElement->Attribute("time"));
+			time += addTime;
+			stop = true;
+		} else if(elemName.compare("move")==0){
+			float addTime = atof(xElement->Attribute("time"));
+			time += addTime;
+			stop = false;
+		} else if(elemName.compare("fire")==0){
+			fire(e);
+		} else if(elemName.compare("speed")==0){
+			float newvX = atof(xElement->Attribute("vX"));
+			float newvY = atof(xElement->Attribute("vY"));
+			setSpeed(newvX,newvY);
+		}
+		TiXmlElement * tElement = xElement->NextSiblingElement();
+		if(tElement){
+			xElement = tElement;
+		}
 	}
 	Entity->setPosition(eX, eY, 1);
 	return true;
@@ -144,8 +178,25 @@ bool EnTank2::fire(Evertable * e){
 		//Bullet * Bob = factory->createBullet(false);
 		Bullet * Bob = factory->createBullet("spike",false);
 		Bob->setXY(eX,eY+20);
-		Bob->setSpeed(-cosf(angle + (bCount*5.0-25.0f)/180.0f*PI) * 200,sinf(angle + (bCount*5.0-25.0f)/180.0f*PI) * 200);
+		Bob->setSpeed(-cosf(angle + (bCount*5.0-25.0f)/180.0f*PI) * 100,sinf(angle + (bCount*5.0-25.0f)/180.0f*PI) * 100);
 		bCount++;
+		if(Everted){
+			Bob->Evert();
+		}
+		Bob = factory->createBullet("spike",false);
+		Bob->setXY(eX,eY+20);
+		Bob->setSpeed(-cosf(angle + (bCount*5.0-25.0f)/180.0f*PI) * 100,sinf(angle + (bCount*5.0-25.0f)/180.0f*PI) * 100);
+		bCount++;
+		if(Everted){
+			Bob->Evert();
+		}
+		Bob = factory->createBullet("spike",false);
+		Bob->setXY(eX,eY+20);
+		Bob->setSpeed(-cosf(angle + (bCount*5.0-25.0f)/180.0f*PI) * 100,sinf(angle + (bCount*5.0-25.0f)/180.0f*PI) * 100);
+		bCount++;
+		if(Everted){
+			Bob->Evert();
+		}
 		//Bob->setSpeed(-angleX * 100,angleY * 100);
 		/*if(x==0){
 			Bob->setSpeed(-angleX * 200,angleY * 200);
@@ -162,9 +213,6 @@ bool EnTank2::fire(Evertable * e){
 			//Bob->setSpeed(-angleX * 200,angleY * 200);
 			Bob->setSpeed(-cosf(angle - 10.0f/180.0f*PI) * 200,sinf(angle - 10.0f/180.0f*PI) * 200);
 		}*/
-		if(Everted){
-			Bob->Evert();
-		}
 	//}
 	return true;
 }

@@ -99,125 +99,139 @@ bool enemyFactory::Build(float mDelta){
 		mTimer->decrementTime(mDelta);
 	}
 	if(time <= 0){
-		if(orders.empty()){
-			return false;
+		{
+			TiXmlElement * tElement = xElement->NextSiblingElement();
+			if(tElement == NULL){
+				return false;
+			}
+			xElement = tElement;
 		}
-		string s = orders.front();
-		orders.pop();
-		char item[30];
-		sscanf(s.c_str(),"%s",item);
-		string i(item);
-		if(i.compare("wait") == 0){
-			float num;
-			sscanf(s.c_str(),"%*s %f",&num);
+		string elemName = xElement->Value();
+		if(elemName.compare("tank")==0){
+			int nX = atoi(xElement->Attribute("posX"));
+			int nY = atoi(xElement->Attribute("posY"));;
+			float nvX = atof(xElement->Attribute("vX"));
+			float nvY = atof(xElement->Attribute("vY"));
+			EnTank * PIV = createTank(false);
+			PIV->setSpeed(nvX,nvY);
+			PIV->setXY((float)nX,(float)nY);
+			PIV->setElement(xElement->FirstChildElement());
+		//does not work properly yet
+		} if(elemName.compare("tank2")==0){
+			int nX = atoi(xElement->Attribute("posX"));
+			int nY = atoi(xElement->Attribute("posY"));;
+			float nvX = atof(xElement->Attribute("vX"));
+			float nvY = atof(xElement->Attribute("vY"));
+			EnTank * PIV = createTank2(false);
+			PIV->setSpeed(nvX,nvY);
+			PIV->setXY((float)nX,(float)nY);
+			PIV->setElement(xElement->FirstChildElement());
+		//probably does not work properly yet
+		} else if(elemName.compare("tank3")==0){
+			int nX = atoi(xElement->Attribute("posX"));
+			int nY = atoi(xElement->Attribute("posY"));;
+			float nvX = atof(xElement->Attribute("vX"));
+			float nvY = atof(xElement->Attribute("vY"));
+			EnTank * PIV = createTank3(false);
+			PIV->setSpeed(nvX,nvY);
+			PIV->setXY((float)nX,(float)nY);
+			PIV->setElement(xElement->FirstChildElement());
+		} else if(elemName.compare("boss1")==0){
+			int nX = atoi(xElement->Attribute("posX"));
+			int nY = atoi(xElement->Attribute("posY"));;
+			float nvX = atof(xElement->Attribute("vX"));
+			float nvY = atof(xElement->Attribute("vY"));
+			EnTank * PIV = createBoss1(false);
+			PIV->setSpeed(nvX,nvY);
+			PIV->setXY((float)nX,(float)nY);
+		} else if(elemName.compare("wait") == 0){
+			float num = atoi(xElement->Attribute("time"));
 			time+=num;
-		} else if(i.compare("untilclear")==0){
-			float num;
-			sscanf(s.c_str(),"%*s %f",&num);
+		} else if(elemName.compare("untilclear")==0){
+			float num = atoi(xElement->Attribute("time"));
 			time+=num;
 			hold = true;
-		} else if(i.compare("tank")==0){
-			int nX;
-			int nY;
-			float nvX;
-			float nvY;
-			sscanf(s.c_str(),"%*s %s %d %d %f %f",item,&nX,&nY,&nvX,&nvY);
-			bool nEverted = false;
-			string ni(item);
-			if(ni.compare("true")==0){
-				nEverted = true;
+		} else if(elemName.compare("line")==0){
+			TextBG->setTransparency(175);
+			mText->setTransparency(255);
+
+			mEnemy->setTransparency(255);
+			mPlayer->setTransparency(255);
+
+			//weee
+			if(dPlayer->toggleBullets()){
+				dPlayer->toggleBullets();
 			}
-			EnTank * PIV = createTank(nEverted);
-			PIV->setSpeed(nvX,nvY);
-			PIV->setXY(nX,nY);
-		} else if(i.compare("tank2")==0){
-			int nX;
-			int nY;
-			float nvX;
-			float nvY;
-			sscanf(s.c_str(),"%*s %s %d %d %f %f",item,&nX,&nY,&nvX,&nvY);
-			bool nEverted = false;
-			string ni(item);
-			if(ni.compare("true")==0){
-				nEverted = true;
+
+			{
+				const char * attr = xElement->Attribute("wait");
+				int w = atoi(attr);
+				time = w;
+				storyhold = true;
 			}
-			EnTank * PIV = createTank2(nEverted);
-			PIV->setSpeed(nvX,nvY);
-			PIV->setXY(nX,nY);
-		} else if(i.compare("tank3")==0){
-			int nX;
-			int nY;
-			float nvX;
-			float nvY;
-			sscanf(s.c_str(),"%*s %s %d %d %f %f",item,&nX,&nY,&nvX,&nvY);
-			bool nEverted = false;
-			string ni(item);
-			if(ni.compare("true")==0){
-				nEverted = true;
+			{
+				string attr = xElement->Attribute("text");
+				vector<string> lines = split(attr.c_str(),'_');
+				attr.clear();
+				for (std::vector<string>::iterator it = lines.begin() ; it != lines.end(); ++it){
+					attr.append(*it);
+					attr.append("\n");
+				}
+				mText->setText(attr.c_str());
 			}
-			EnTank * PIV = createTank3(nEverted);
-			PIV->setSpeed(nvX,nvY);
-			PIV->setXY(nX,nY);
-		} else if(i.compare("boss1")==0){
-			int nX;
-			int nY;
-			float nvX;
-			float nvY;
-			sscanf(s.c_str(),"%*s %s %d %d %f %f",item,&nX,&nY,&nvX,&nvY);
-			bool nEverted = false;
-			string ni(item);
-			if(ni.compare("true")==0){
-				nEverted = true;
+			{
+				string attr = xElement->Attribute("side");
+				if(attr[0]=='l'){
+					mPlayer->setPosition(5,600,15);
+					mPlayer->setTint(255,255,255);
+					mEnemy->setPosition(595,600,12);
+					mEnemy->setTint(210,210,210);
+				} else {
+					mEnemy->setPosition(495,600,15);
+					mEnemy->setTint(255,255,255);
+					mPlayer->setPosition(-95,600,12);
+					mPlayer->setTint(210,210,210);
+				}
 			}
-			EnTank * PIV = createBoss1(nEverted);
-			PIV->setSpeed(nvX,nvY);
-			PIV->setXY(nX,nY);
-		}else if(i.compare("setbanner")==0){
+			{
+				string attr = xElement->Attribute("x");
+				int nX = atoi(attr.c_str());
+				mText->setPosition(nX,500,22);
+			}
+		} else if(elemName.compare("banner")==0) {
 			mSurfaceBanner = IND_Surface::newSurface();
-			//char picture[50];
-			//sscanf(s.c_str(),"%*s %s %*d %*d %*d",picture);
-			//string ni(picture);
-			mI->_surfaceManager->add(mSurfaceBanner, "../../resources/Hokuhou/stage1.png", IND_ALPHA, IND_32, 0, 255, 0);
+			string attr = xElement->Attribute("file");
+			int r = atoi(xElement->Attribute("r"));
+			int g = atoi(xElement->Attribute("g"));
+			int b = atoi(xElement->Attribute("b"));
+			mI->_surfaceManager->add(mSurfaceBanner, attr.c_str(), IND_ALPHA, IND_32, r, g, b);
 			mBanner->setSurface(mSurfaceBanner);					// Set the surface into the entity
 			mBanner->setTint(0,0,0);
 			mBanner->setHotSpot(0.5,0.5);
 			mBanner->setPosition(250,200,3);
 			mBanner->setTransparency(0);
-		} else if(i.compare("showbanner")==0){
-			mBanner->setTransparency(255);
-		} else if(i.compare("hidebanner")==0){
-			mBanner->setTransparency(0);
-		} else if(i.compare("dialog")==0){
-			int nX = 200;
-			sscanf(s.c_str(),"%*s %d",&nX);
-			mText->setTransparency(255);
-			string mString = orders.front();
-			orders.pop();
-			mText->setText(mString.c_str());
-			mText->setPosition(nX,500,22);
-		} else if(i.compare("hidedialog")==0){
+		} else if(elemName.compare("hidedialog")==0){
 			mText->setTransparency(0);
-		} else if(i.compare("storyhold")==0){
-			float num;
-			sscanf(s.c_str(),"%*s %f",&num);
-			time+=num;
-			storyhold = true;
-		} else if(i.compare("bmchange")==0){
-			mSm->changeBM("new song");
-		} else if(i.compare("end")==0){
-			return false;
+			TextBG->setTransparency(0);
+			mPlayer->setTransparency(0);
+			mEnemy->setTransparency(0);
+			//teehee
+			if(!dPlayer->toggleBullets()){
+				dPlayer->toggleBullets();
+			}
+		} else if(elemName.compare("showbanner")==0){
+			mBanner->setTransparency(255);
+		} else if(elemName.compare("hidebanner")==0){
+			mBanner->setTransparency(0);
+		} else if(elemName.compare("presetBM")==0){
+			string attr = xElement->Attribute("file");
+			int bmnum = atoi(xElement->Attribute("num"));
+			mSm->presetBM(bmnum,attr.c_str());
+		} else if(elemName.compare("changeBM")==0){
+			int bmnum = atoi(xElement->Attribute("num"));
+			mSm->changeBM(bmnum);
 		}
 	}
-	/*time += mDelta;
-	if(time > 4 && (time - lastfire) > 10){
-		EnTank * PIV = createTank(false);
-		PIV->setSpeed(50.0f,25.0f);
-		PIV->setXY(0,70);
-		PIV = createTank(true);
-		PIV->setSpeed(-50.0f,25.0f);
-		PIV->setXY(500,70);
-		lastfire = time;
-	}*/
 	return true;
 }
 bool enemyFactory::Evert(){
@@ -292,29 +306,10 @@ Crow * enemyFactory::createCrow(bool Evert){
 	return Winston;
 }
 */
-enemyFactory::enemyFactory(){
-	bFactory = BulletFactory::instance();
-	mI = CIndieLib::instance();
-	mSm = SoundManager::instance();
-	mBanner = IND_Entity2d::newEntity2d();					
-	mI->_entity2dManager->add(mBanner);					// Entity adding
 
-	// Font
-	mFont = IND_Font::newFont();
-	mI->_fontManager->add(mFont, "../../resources/font_small.png", "../../resources/font_small.xml", IND_ALPHA, IND_32);
-	mText = IND_Entity2d::newEntity2d();					
-	mI->_entity2dManager->add(mText);				// Entity adding
-	mText->setFont(mFont);
-	mText->setPosition(200,500,22);
-	mText->setTransparency(0);
-	mText->setLineSpacing	(18);
-	mText->setCharSpacing	(-7);
-	mText->setScale(1,1);
-	mText->setAlign(IND_LEFT);
-
-
+bool enemyFactory::NextStage(){
 	mTimer = Timer::instance();
-
+	/*
 	ifstream inf("../../resources/Hokuhou/EversionStage1.txt");
 	while(inf){
 		char str[101];
@@ -324,6 +319,91 @@ enemyFactory::enemyFactory(){
 		orders.push(s);
 	}
 	inf.close();
+	*/
+	
+	lastfire = -6;
+	time = 0;
+	hold = false;
+	storyhold = false;
+	return false;
+}
+
+enemyFactory::enemyFactory(){
+	bFactory = BulletFactory::instance();
+	mI = CIndieLib::instance();
+	mSm = SoundManager::instance();
+	mBanner = IND_Entity2d::newEntity2d();					
+	mI->_entity2dManager->add(mBanner);					// Entity adding
+	FontsNSurfs = FontManager::instance();
+
+	// Font
+	TextBG = IND_Entity2d::newEntity2d();
+	mI->_entity2dManager->add(TextBG);	
+	mSurfaceWhite = IND_Surface::newSurface();
+	mI->_surfaceManager->add(mSurfaceWhite, "../../resources/Hokuhou/white.png", IND_ALPHA, IND_32);
+	TextBG->setSurface(mSurfaceWhite);					// Set the surface into the entity
+	TextBG->setTint(0,0,0);
+	TextBG->setPosition(20,490,21);
+	//TextBG->setTransparency(50);
+	TextBG->setScale(470,80);
+
+	mText = IND_Entity2d::newEntity2d();					
+	mI->_entity2dManager->add(mText);				// Entity adding
+	mText = FontsNSurfs->createText("small");
+	mText->setPosition(200,500,22);
+	mText->setAlign(IND_LEFT);
+
+
+	mTimer = Timer::instance();
+
+	mXML = new TiXmlDocument( "../../resources/Hokuhou/stage1.xml" );
+	mXML->LoadFile();
+	xElement = mXML->FirstChildElement()->FirstChildElement();
+
+	//this is kinda haphazard right now
+	//replace with something sturdier in the future
+	string PimgDir = xElement->Attribute("file");
+
+	//Player
+	mPlayer = IND_Entity2d::newEntity2d();
+	mI->_entity2dManager->add(mPlayer);
+	mSurfacePlayer = IND_Surface::newSurface();
+	mI->_surfaceManager->add(mSurfacePlayer, PimgDir.c_str(), IND_ALPHA, IND_32, 0, 255, 0);
+	mPlayer->setSurface(mSurfacePlayer);
+	mPlayer->setHotSpot(0.0f,1.0f);
+	mPlayer->setPosition(5,600,15);
+
+	dPlayer = Player::instance();
+
+	xElement = xElement->NextSiblingElement();
+
+	string EimgDir = xElement->Attribute("file");
+
+	//Enemy
+	mEnemy = IND_Entity2d::newEntity2d();
+	mI->_entity2dManager->add(mEnemy);
+	mSurfaceEnemy = IND_Surface::newSurface();
+	mI->_surfaceManager->add(mSurfaceEnemy, EimgDir.c_str(), IND_ALPHA, IND_32, 0, 255, 0);
+	mEnemy->setSurface(mSurfaceEnemy);
+	mEnemy->setHotSpot(1.0f,1.0f);
+	//mEnemy->setPosition(495,600,15);
+	mEnemy->setPosition(595,600,12);
+	mEnemy->setTint(210,210,210);
+	
+	//string thisstring = xElement->Value();
+
+	/*
+	ifstream inf("../../resources/Hokuhou/EversionStage1.txt");
+	while(inf){
+		char str[101];
+		streamsize y = 100;
+		inf.getline(str, y);
+		string s(str);
+		orders.push(s);
+	}
+	inf.close();
+	*/
+
 	lastfire = -6;
 	time = 0;
 	hold = false;
